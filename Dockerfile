@@ -2,7 +2,7 @@ FROM sameersbn/ubuntu:14.04.20160504
 MAINTAINER sameer@damagehead.com
 
 ENV SQUID_VERSION=3.3.8 \
-    SQUID_CACHE_DIR=/var/cache/squid3 \
+    SQUID_CACHE_DIR=/etc/squid3/cache \
     SQUID_LOG_DIR=/var/log/squid3 \
     SQUID_USER=proxy
 
