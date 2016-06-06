@@ -13,6 +13,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 80F70E11F0F0D5F
  && mv /etc/squid3/squid.conf /etc/squid3/squid.conf.dist \
  && rm -rf /var/lib/apt/lists/*
 
+ADD bad-domains.acl /etc/squid3/bad-domains.acl
 COPY squid.conf /etc/squid3/squid.conf
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
