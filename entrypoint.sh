@@ -2,14 +2,14 @@
 set -e
 
 create_log_dir() {
-  mkdir -p ${SQUID_LOG_DIR}
-  chmod -R 755 ${SQUID_LOG_DIR}
-  chown -R ${SQUID_USER}:${SQUID_USER} ${SQUID_LOG_DIR}
+  mkdir -p /var/log/squid3
+  chmod -R 755 /var/log/squid3
+
 }
 
 create_cache_dir() {
-  mkdir -p ${SQUID_CACHE_DIR}
-  chown -R ${SQUID_USER}:${SQUID_USER} ${SQUID_CACHE_DIR}
+  mkdir -p /etc/squid3/cache
+
 }
 
 apply_backward_compatibility_fixes() {
@@ -34,7 +34,7 @@ fi
 
 # default behaviour is to launch squid
 if [[ -z ${1} ]]; then
-  if [[ ! -d ${SQUID_CACHE_DIR}/00 ]]; then
+  if [[ ! -d $/etc/squid3/cache/00 ]]; then
     echo "Initializing cache..."
     $(which squid3) -N -f /etc/squid3/squid.conf -z
   fi

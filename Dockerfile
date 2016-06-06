@@ -3,8 +3,7 @@ MAINTAINER sameer@damagehead.com
 
 ENV SQUID_VERSION=3.3.8 \
     SQUID_CACHE_DIR=/etc/squid3/cache \
-    SQUID_LOG_DIR=/var/log/squid3 \
-    SQUID_USER=proxy
+    SQUID_LOG_DIR=/var/log/squid3
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 80F70E11F0F0D5F10CB20E62F5DA5F09C3173AA6 \
  && echo "deb http://ppa.launchpad.net/brightbox/squid-ssl/ubuntu trusty main" >> /etc/apt/sources.list \
